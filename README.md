@@ -1,11 +1,11 @@
 ![Lekhani · Udgam Labs](./assets/banner.png)
 
-**UDGAM LABS** · Transliterator · 0.87 MB, Hindi, runs in the browser
+**UDGAM LABS** · Transliterator · 0.88 MB, Hindi, runs in the browser
 
 # Lekhani
 
 **Lekhani turns Hindi typed in Latin letters into Devanagari, on your own device.** You type `kaise ho`, it writes
-कैसे हो. The whole thing is a 0.87 MB download: a 0.81M-parameter model at 4 bits, a list of 200,000 common Hindi words
+कैसे हो. The whole thing is a 0.88 MB download: a 0.81M-parameter model at 4 bits, a list of 200,000 common Hindi words
 and a 10 KB JavaScript runner with no dependencies. It runs in a web page or in Node, so nothing you type is sent
 anywhere.
 
@@ -102,7 +102,7 @@ paired for gaps. Measured by us on 28 October 2026.
 
 | System | What you download or hold | Aksharantar Hindi | Hinglish chat set (of 122) |
 |---|---|---|---|
-| **Lekhani** | **0.87 MB** | **65.9%** (64.9 to 66.8) | **112** |
+| **Lekhani** | **0.88 MB** | **65.9%** (64.9 to 66.8) | **112** |
 | IndicXlit, model on its own (beam 4, its default) | 11.5M parameters (46 MB fp32; a third-party 8-bit browser export is 14.4 MB) | 58.9% | 102 |
 | IndicXlit, full Python package (model + word list) | the model + a 4.2M-word list, 358 MB in memory | 68.7% | 112 |
 
@@ -148,6 +148,15 @@ For typing Hindi in Latin letters on websites, apps and tools: search boxes, for
 suggestions. It works one word at a time and does not translate. Show users the runners-up so they can fix a wrong
 word, and keep their own spelling if they do. It is not meant for names on legal or official documents without a
 human check.
+
+## Changes
+
+- **1.1.0 (2 Nov 2026):** the runner is about 10 times faster (batched beam search, WebAssembly SIMD kernels with a
+  plain-JavaScript fallback, a GELU table, leaner beam search and a 2,000-word cache), contributed by
+  [Manit Roy](https://github.com/manit2004) in [#1](https://github.com/udgamlabs/lekhani/pull/1). Same model and word list: the
+  same best word and the same 8 candidates, in the same order, on all 9,991 Aksharantar Hindi test words (checked again on a
+  Mac mini: 18.7 to 1.9 ms a word in Node). The runner grew from 5 KB to 10 KB, so the download is 0.88 MB (was 0.87 MB).
+- **1.0.0 (30 Oct 2026):** first release.
 
 ## Licence
 
