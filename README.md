@@ -173,7 +173,7 @@ words.
 
 ```bibtex
 @misc{udgamlabs2026lekhani,
-  title  = {Lekhani: a 0.87 MB in-browser Hindi transliterator},
+  title  = {Lekhani: a 0.88 MB in-browser Hindi transliterator},
   author = {Prasad, Jitesh K},
   year   = {2026},
   howpublished = {Udgam Labs},
